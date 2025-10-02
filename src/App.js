@@ -5,6 +5,7 @@ import Admin from './components/admin/admin';
 import './App.css';
 import Nav from "./common/nav";
 import BooksList from "./components/books/books-list";
+import Book from "./components/books/book";
 
 const AppContainer = styled.div`
   margin: 60px auto;
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Books />}>
                 <Route path="/" element={<BooksList />}/>
+                <Route path="/:id" element={<Book />}/>
               </Route>
               <Route path="/admin" element={<Admin />}/>
               <Route path="*" element={<Navigate to="/" />} />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.div`
     width: 90%;
     height: 90px;
     display: flex;
@@ -33,16 +33,16 @@ const Price = styled.p`
     font-size: 1rem;
 `;
 
-const BookCard = ({book}) => {
+const Book = ({book}) => {
     return(
-        <StyledLink to={book.id}>
+        <div>
             <StyledImg width={220} src={`/assets/images/books/${book.id}.png`} />
             <div>
                 <Title>{book.title}</Title>
                 <Price>{`$${book.price}`}</Price>
             </div>
-        </StyledLink>
+        </div>
     )
 }
 
-export default BookCard;
+export default Book;
