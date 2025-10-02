@@ -1,6 +1,14 @@
 const express = require("express");
+const cors = require("cors");
+
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true,
+}));
+app.options('*', cors());
 
 app.use(express.json());
 
@@ -27,7 +35,7 @@ let books = [
     price: 12.5,
   },
   {
-    id: "1984",
+    id: "t",
     title: "1984",
     description:
       "A dystopian novel by George Orwell, set in Airstrip One, a province of the superstate Oceania in a world of perpetual war, omnipresent surveillance, and public manipulation.",
