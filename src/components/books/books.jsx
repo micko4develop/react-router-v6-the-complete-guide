@@ -1,7 +1,5 @@
-import { Outlet, Routes, Route } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import BooksList from "./books-list";
-import Book from "./book";
 
 const BooksContainer = styled.div`
     display: flex;
@@ -22,10 +20,6 @@ const Books = () => {
             <BooksContainer>
                 <Logo src="/assets/images/logo.svg" alt="StarBooks Logo" />
                 <Outlet />
-                <Routes>
-                    <Route path="/" element={<BooksList />}/>
-                    <Route path="/:id" element={<Book />}/>
-                </Routes>
             </BooksContainer>
         </>
     )

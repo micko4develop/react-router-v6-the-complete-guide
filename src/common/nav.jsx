@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 
 const NavContainer = styled.nav`
@@ -19,8 +19,8 @@ const NavContainer = styled.nav`
 const Nav = () => {
     return(
         <NavContainer>
-            <NavLink to={"/"}>Books</NavLink>
-            <NavLink to={"/admin"}>Admin</NavLink>
+            <NavLink to="/">Books</NavLink>
+            <NavLink to="/admin">Admin</NavLink>
         </NavContainer>
     )
 }

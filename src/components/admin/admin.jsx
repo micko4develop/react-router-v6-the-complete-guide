@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { Link, Routes, Route } from "react-router-dom";
-import BooksList from "../books/books-list";
-import BookEdit from "../books/book-edit";
+import { Link, Outlet } from "react-router-dom";
 
 const Container = styled.div`
     display: flex;
@@ -26,11 +24,7 @@ const Admin = () => {
                 <h1>Admin</h1>
                 <StyledLink to="new">New</StyledLink>
             </Container>
-            <Routes>
-                <Route path="/" element={<BooksList />}/>
-                <Route path="/new" element={<BookEdit isEdit={false} />}/>
-                <Route path="/:id" element={<BookEdit isEdit={true} />} />
-            </Routes>
+            <Outlet />
         </>
     )
 }
