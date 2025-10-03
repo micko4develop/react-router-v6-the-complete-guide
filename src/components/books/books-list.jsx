@@ -1,9 +1,18 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import BookCard from "./book-card";
+import { useLocation } from "react-router-dom";
 
 const BooksList = () => {
+    const { state } = useLocation();
+    console.log(state);
     const [data, setData] = useState(null);
+
+    useEffect(() => {
+        if(state) {
+            console.warn(`No Results found for ${state.id}`)
+        }
+    }, [])
 
     useEffect(() => {
     (async () => {

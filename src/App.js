@@ -4,8 +4,8 @@ import Books from './components/books/books';
 import Admin from './components/admin/admin';
 import './App.css';
 import Nav from "./common/nav";
-import BooksList from "./components/books/books-list";
-import Book from "./components/books/book";
+import ProtectedRoute from "./common/protected-route";
+import { useState } from "react";
 
 const AppContainer = styled.div`
   margin: 60px auto;
@@ -19,6 +19,7 @@ const Content = styled.div`
 `;
 
 function App() {
+  const [authenticated] = useState(true);
   return (
     <>
       <AppContainer>
@@ -26,11 +27,8 @@ function App() {
           <Content>
             <Nav />
             <Routes>
-              <Route path="/" element={<Books />}>
-                <Route path="/" element={<BooksList />}/>
-                <Route path="/:id" element={<Book />}/>
-              </Route>
-              <Route path="/admin" element={<Admin />}/>
+              <Route path="/*" element={<Books />}/>
+              <Route path="/admin" element={<ProtectedRoute authenticated={authenticated} to={"/"} element={<Admin />} />}/>
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Content>

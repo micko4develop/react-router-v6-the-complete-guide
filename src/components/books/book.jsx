@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BookDetail from "./book-detail";
 
 const Book = () => {
     const { id } = useParams();   
     const [data, setData] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
@@ -14,6 +15,7 @@ const Book = () => {
                 setData(res.data);
             } catch (err) {
                 console.error("Error fetching book:", err);
+                navigate("/", {state: {id}});
             }
         })();  
     }, [id]);  
