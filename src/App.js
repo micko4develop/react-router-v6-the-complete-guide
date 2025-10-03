@@ -28,7 +28,7 @@ function App() {
             <Nav />
             <Routes>
               <Route path="/*" element={<Books />}/>
-              <Route path="/admin" element={<ProtectedRoute authenticated={authenticated} to={"/"} element={<Admin />} />}/>
+              <Route path="/admin/*" element={<ProtectedRoute authenticated={authenticated} to={"/"} element={<Admin />} />}/>
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Content>

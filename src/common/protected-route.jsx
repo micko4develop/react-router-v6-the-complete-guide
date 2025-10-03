@@ -5,7 +5,7 @@ const ProtectedRoute = ({to, authenticated, element}) => {
     if(!authenticated) return <Navigate to={to}/> 
     return (
         <Routes>
-            <Route path="/" element={element} />
+            <Route path="/*" element={element} />
         </Routes>
     )
 }
