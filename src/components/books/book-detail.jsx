@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
-const StyledLink = styled.div`
+const StyledDiv = styled.div`
     width: 90%;
     height: 90px;
     display: flex;
@@ -11,12 +11,6 @@ const StyledLink = styled.div`
     margin-bottom: 8px;
     text-decoration: none;
     color: black;
-    transition: transform 0.1s ease-in-out, background 0.1s ease-in-out;
-    cursor: pointer;
-    &:hover {
-        transform: translate(0, -3px);
-        box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1);
-    }
 `;
 
 const StyledImg = styled.img`
@@ -35,13 +29,13 @@ const Price = styled.p`
 
 const BookDetail = ({book}) => {
     return(
-        <div>
+        <StyledDiv>
             <StyledImg width={220} src={`/assets/images/books/${book.id}.png`} />
             <div>
                 <Title>{book.title}</Title>
                 <Price>{`$${book.price}`}</Price>
             </div>
-        </div>
+        </StyledDiv>
     )
 }
 
