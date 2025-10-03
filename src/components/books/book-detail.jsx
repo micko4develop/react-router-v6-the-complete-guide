@@ -33,7 +33,7 @@ const Price = styled.p`
     font-size: 1rem;
 `;
 
-const Book = ({book}) => {
+const BookDetail = ({book}) => {
     return(
         <div>
             <StyledImg width={220} src={`/assets/images/books/${book.id}.png`} />
@@ -45,4 +45,4 @@ const Book = ({book}) => {
     )
 }
 
-export default Book;
+export default BookDetail;
